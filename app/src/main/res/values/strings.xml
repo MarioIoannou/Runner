@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Runner</string>
+    <string name="google_maps_key">AIzaSyDVkIYxO5oBjkTwTYvUesqXTQCWSqdABLo</string>
+    <string name="my_runs">My Runs</string>
+    <string name="my_statistics">Statistics</string>
+    <string name="my_settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/runFragment"
+        android:fontFamily="sans-serif"
+        android:icon="@drawable/ic_running"
+        android:title="@string/my_runs" />
+
+    <item
+        android:id="@+id/statisticsFragment"
+        android:icon="@drawable/ic_graph"
+        android:fontFamily="sans-serif"
+        android:title="@string/my_statistics"/>
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_setting_svgrepo_com"
+        android:fontFamily="sans-serif"
+        android:title="@string/my_settings"/>
+</menu>
