@@ -5,6 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav.xml"
     app:startDestination="@id/infoFragment">
+
+    <action
+        android:id="@+id/action_global_trackingFragment"
+        app:destination="@id/trackingFragment"
+        app:launchSingleTop="true" />
+    <!--It will make sure we don't launch a new instance of our activity-->
+
     <fragment
         android:id="@+id/runFragment"
         android:name="com.marioioannou.runner.ui.fragments.RunFragment"

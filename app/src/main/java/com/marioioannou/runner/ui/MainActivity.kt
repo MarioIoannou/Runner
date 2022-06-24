@@ -1,5 +1,6 @@
 package com.marioioannou.runner.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +16,7 @@ import com.marioioannou.runner.R
 import com.marioioannou.runner.databinding.ActivityMainBinding
 import com.marioioannou.runner.db.RunDAO
 import com.marioioannou.runner.ui.viewmodel.MainViewModel
+import com.marioioannou.runner.utlis.Constants
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -29,8 +31,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //Log.d("runDao","RUNDAO: ${runDAO.hashCode()}")
+
+        navigateToTrackFragment(intent)
+
         setSupportActionBar(binding.myToolbar)
+
         fragmentNavigation()
+
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.findNavController()
@@ -58,6 +65,21 @@ class MainActivity : AppCompatActivity() {
 //                else -> binding.bottomNavigationView.isVisible = false
 //            }
 //        }
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        navigateToTrackFragment(intent)
+    }
+
+    //If user clicks the notification
+    private fun navigateToTrackFragment(intent: Intent?){
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.findNavController()
+        if (intent?.action == Constants.ACTION_SHOW_TRACKING_FRAGMENT){
+            navController.navigate(R.id.action_global_trackingFragment)
+        }
     }
 
     private fun fragmentNavigation() {
