@@ -22,4 +22,8 @@
         <item name="android:editTextColor">@color/teal_light</item>
         <item name="android:textColorHint">@color/white</item>
     </style>
+
+    <style name="Button_White" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/white</item>
+    </style>
 </resources>

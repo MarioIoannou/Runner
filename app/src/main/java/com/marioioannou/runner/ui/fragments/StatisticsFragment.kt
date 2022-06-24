@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.marioioannou.runner.R
+import com.marioioannou.runner.databinding.FragmentSettingsBinding
+import com.marioioannou.runner.databinding.FragmentStatisticsBinding
 import com.marioioannou.runner.ui.viewmodel.MainViewModel
 import com.marioioannou.runner.ui.viewmodel.StatisticsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,13 +16,20 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class StatisticsFragment : Fragment() {
 
-    private val viewModel: StatisticsViewModel by viewModels()
+    private val viewModel: MainViewModel by viewModels()
+    private lateinit var binding: FragmentStatisticsBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_statistics, container, false)
+        binding = FragmentStatisticsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 }
